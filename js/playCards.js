@@ -33,6 +33,7 @@ $(document).ready(function(){
     var doOrderByRank = function(){
         hand.orderByRank();
         hand.spread(); // update card table
+        showHand();
     }
     var doOrderBySuit = function(){
         cardDeck.orderBySuit();
