@@ -31,8 +31,8 @@ $(document).ready(function(){
         showHand();
     }
     var doOrderByRank = function(){
-        cardDeck.orderByRank();
-        cardDeck.spread(); // update card table
+        hand.orderByRank();
+        hand.spread(); // update card table
     }
     var doOrderBySuit = function(){
         cardDeck.orderBySuit();
