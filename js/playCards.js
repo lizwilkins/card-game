@@ -28,12 +28,11 @@ $(document).ready(function(){
         }
         hand[hand.length] = c;
         cardDeck.spread();
-        hand.OrderByRank();
         showHand();
     }
     var doOrderByRank = function(){
-        hand.orderByRank();
-        showHand();
+        cardDeck.orderByRank();
+        cardDeck.spread(); // update card table
     }
     var doOrderBySuit = function(){
         cardDeck.orderBySuit();
