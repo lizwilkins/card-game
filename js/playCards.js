@@ -28,6 +28,7 @@ $(document).ready(function(){
         }
         hand[hand.length] = c;
         cardDeck.spread();
+        hand.OrderByRank();
         showHand();
     }
     var doOrderByRank = function(){
