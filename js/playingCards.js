@@ -160,10 +160,11 @@ if (Array.indexOf === undefined) {
     var intRegex = /^\d+$/;
 
     if (a.rank == b.rank)       return 0;
-    if (a.rank == "N")        return 1;
-    if (b.rank == "N")        return -1;
     if (a.rank == "A")        return 1;
     if (b.rank == "A")        return -1;
+    if (a.rank == "N")        return 1;
+    if (b.rank == "N")        return -1;
+
     if (!isNaN(a.rank - b.rank))    return a.rank - b.rank;
     if (a.rank == "K" && b.rank == "J")   return 1;
     if (a.rank == "J" && b.rank == "K")   return -1;
@@ -171,9 +172,9 @@ if (Array.indexOf === undefined) {
     if (a.rank == "Q" && b.rank == "K")   return -1;
     if (a.rank == "Q" && b.rank == "J")   return 1;
     if (a.rank == "J" && b.rank == "Q")   return -1;
-    if (a.rank == "K" && intRegex.test(b.rank)) return -1;
-    if (a.rank == "Q" && intRegex.test(b.rank)) return -1;
-    if (a.rank == "J" && intRegex.test(b.rank)) return -1;
+    if (a.rank == "K" && intRegex.test(b.rank)) return 1;
+    if (a.rank == "Q" && intRegex.test(b.rank)) return 1;
+    if (a.rank == "J" && intRegex.test(b.rank)) return 1;
     if (intRegex.test(a.rank) && b.rank == "K") return -1;
     if (intRegex.test(a.rank) && b.rank == "Q") return -1;
     if (intRegex.test(a.rank) && b.rank == "J") return -1;
