@@ -34,10 +34,6 @@ if (Array.indexOf === undefined) {
           this.cards[l] = new playingCards.card(r, o.ranks[r], s, o.suits[s]);
         }
       }
-      for (j = 0; j < o.jokers; j++) {
-        l = this.cards.length;
-        this.cards[l] = new playingCards.card("N", o.jokerText, (j % 2) + 1, '');
-      }
     }
   };
 
