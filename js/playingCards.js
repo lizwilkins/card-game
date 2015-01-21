@@ -93,8 +93,6 @@ if (Array.indexOf === undefined) {
     "renderMode": 'css',
     "ofString": " of ",
     "startShuffled": true,
-    "jokers": 2,
-    "jokerText": "Joker",
     "ranks": {
       "2": "Two",
       "3": "Three",
