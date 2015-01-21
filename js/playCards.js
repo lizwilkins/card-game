@@ -53,7 +53,7 @@ $(document).ready(function(){
         showHand();
         cardDeck.addCard(c);
         c = hand.pop();
-        howHand();
+        showHand();
         cardDeck.addCard(c);
         cardDeck.spread();
     });
