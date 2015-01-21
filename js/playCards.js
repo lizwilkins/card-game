@@ -52,6 +52,7 @@ $(document).ready(function(){
         var c = hand.pop();
         showHand();
         cardDeck.addCard(c);
+        c = hand.pop();
         cardDeck.addCard(c);
         cardDeck.spread();
     });
