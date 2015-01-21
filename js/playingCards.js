@@ -105,10 +105,10 @@ if (Array.indexOf === undefined) {
       "A": "Ace"
     },
     "suits": {
+      "H": "Hearts",
       "S": "Spades",
       "D": "Diamonds",
-      "C": "Clubs",
-      "H": "Hearts"
+      "C": "Clubs"
     }
   };
 
