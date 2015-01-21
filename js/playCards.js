@@ -38,7 +38,7 @@ $(document).ready(function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
-    var doOrderByRankAndSuit = function(){
+    var doOrderByHearts = function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
