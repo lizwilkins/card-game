@@ -38,6 +38,10 @@ $(document).ready(function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
+    var doOrderByRankAndSuit = function(){
+        cardDeck.orderBySuit();
+        cardDeck.spread(); // update card table
+    }
     $('#shuffler').click(doShuffle);
     $('#draw').click(doDrawCard);
     $('#shuffleDraw').click(function(){
@@ -56,6 +60,8 @@ $(document).ready(function(){
     });
     $('#orderByRank').click(doOrderByRank);
     $('#orderBySuit').click(doOrderBySuit);
+    $('#orderByRankAndSuit').click(doorderByRankAndSuit);
+
 
 });
 /*
