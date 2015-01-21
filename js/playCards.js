@@ -38,10 +38,6 @@ $(document).ready(function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
-    var doOrderByHearts = function(){
-        cardDeck.orderBySuit();
-        cardDeck.spread(); // update card table
-    }
     $('#shuffler').click(doShuffle);
     $('#draw').click(doDrawCard);
     $('#shuffleDraw').click(function(){
@@ -55,6 +51,7 @@ $(document).ready(function(){
         }
         var c = hand.pop();
         showHand();
+        cardDeck.addCard(c);
         cardDeck.addCard(c);
         cardDeck.spread();
     });
