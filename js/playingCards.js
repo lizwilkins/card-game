@@ -166,8 +166,8 @@ if (Array.indexOf === undefined) {
     if (a.rank == "Q" && b.rank == "J")   return 1;
     if (a.rank == "J" && b.rank == "Q")   return -1;
     
-    if (a.rank == "K" && b.rank == "J")   return 1;
-    if (a.rank == "J" && b.rank == "K")   return -1;
+    if (a.rank == "K" && b.rank == "J")   return -1;
+    if (a.rank == "J" && b.rank == "K")   return 1;
     if (a.rank == "K" && b.rank == "Q")   return 1;
     if (a.rank == "Q" && b.rank == "K")   return -1;
     
