@@ -3,7 +3,7 @@ $(document).ready(function(){
     cardDeck.spread(); // show it
 
     var hand = [];
-    var hand2 = [];
+    var hand1 = [];
     var showError = function(msg){
         $('#error').html(msg).show();
         setTimeout(function(){
