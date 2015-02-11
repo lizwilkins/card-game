@@ -13,12 +13,12 @@ $(document).ready(function(){
     var showHands = function(){
         var el = $('#yourHand')
         el.html('');
-        for(var i=0;i<hand.length;i++){
+        for (var i=0; i<hand.length; i++){
             el.append(hand[i].getHTML());
         }
         el = $('#computerHand')
         el.html('');
-        for(var i=0;i<hand1.length;i++){
+        for (var i=0; i<hand1.length; i++){
             el.append(hand1[i].getHTML());
         }
     }
@@ -36,7 +36,6 @@ $(document).ready(function(){
         cardDeck.spread();
         showHands();
     }
-    
     var doDrawCard1 = function(){
         var c = cardDeck.draw();
         if(!c){
@@ -44,6 +43,27 @@ $(document).ready(function(){
             return;
         }
         hand1[hand1.length] = c;
+        cardDeck.spread();
+        showHands();
+    }
+    var doDeal = function(){
+        var c;
+        for (var i=0; i<7; i++){
+            c = cardDeck.draw();
+            if(!c){
+                showError('no more cards');
+                return;
+            }
+            hand[hand.length] = c;
+        }
+        for (var i=0; i<7; i++){
+            c = cardDeck.draw();
+            if(!c){
+                showError('no more cards');
+                return;
+            }
+            hand[hand1.length] = c;
+        }
         cardDeck.spread();
         showHands();
     }
@@ -56,6 +76,7 @@ $(document).ready(function(){
         cardDeck.spread(); // update card table
     }
     $('#shuffler').click(doShuffle);
+    $('#dealer').click(doDeal);
     $('#draw').click(doDrawCard);
     $('#draw1').click(doDrawCard1);
     $('#shuffleDraw').click(function(){
