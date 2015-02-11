@@ -51,8 +51,6 @@ $(document).ready(function(){
             doDrawCard();
             doDrawCard1();
         }
-        cardDeck.spread();
-        showHands();
     }
     var doOrderByRank = function(){
         cardDeck.orderByRank();
