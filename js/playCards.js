@@ -10,7 +10,7 @@ $(document).ready(function(){
             $('#error').fadeOut('slow');
         },3000);
     }
-    var showHand = function(){
+    var showHands = function(){
         var el = $('#yourHand')
         el.html('');
         for(var i=0;i<hand.length;i++){
@@ -34,7 +34,7 @@ $(document).ready(function(){
         }
         hand[hand.length] = c;
         cardDeck.spread();
-        showHand();
+        showHands();
     }
     
     var doDrawCard1 = function(){
@@ -45,7 +45,7 @@ $(document).ready(function(){
         }
         hand1[hand1.length] = c;
         cardDeck.spread();
-        showHand();
+        showHands();
     }
     var doOrderByRank = function(){
         cardDeck.orderByRank();
@@ -68,12 +68,23 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
-        showHand();
         cardDeck.addCard(c);
         c = hand.pop();
-        showHand();
         cardDeck.addCard(c);
         cardDeck.spread();
+        showHands();
+    });
+    $('#addCard1').click(function(){
+        if(!hand1.length){
+            showError('your hand is empty');
+            return;
+        }
+        var c = hand1.pop();
+        cardDeck.addCard(c);
+        c = hand1.pop();
+        cardDeck.addCard(c);
+        cardDeck.spread();
+        showHands();
     });
     $('#orderByRank').click(doOrderByRank);
     $('#orderBySuit').click(doOrderBySuit);
