@@ -47,22 +47,9 @@ $(document).ready(function(){
         showHands();
     }
     var doDeal = function(){
-        var c;
         for (var i=0; i<7; i++){
-            c = cardDeck.draw();
-            if(!c){
-                showError('no more cards');
-                return;
-            }
-            hand[hand.length] = c;
-        }
-        for (var i=0; i<7; i++){
-            c = cardDeck.draw();
-            if(!c){
-                showError('no more cards');
-                return;
-            }
-            hand[hand1.length] = c;
+            doDrawCard();
+            doDrawCard1();
         }
         cardDeck.spread();
         showHands();
