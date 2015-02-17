@@ -82,6 +82,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
+        showHands();
         discardPile[discardPile.length] = c;
         showHands();
     });
@@ -91,6 +92,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
+        showHands();
         discardPile[discardPile.length] = c;
         showHands();
     });
