@@ -26,8 +26,8 @@ $(document).ready(function(){
         
         el = $('#discardPile')
         el.html('');
-        for (var i=0; i<hand1.length; i++){
-            el.append(hand1[i].getHTML());
+        for (var i=0; i<discardPile.length; i++){
+            el.append(discardPile[i].getHTML());
         }
     }
     var doShuffle = function(){
