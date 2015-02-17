@@ -75,8 +75,7 @@ $(document).ready(function(){
         }
         var c = hand.pop();
         cardDeck.addCard(c);
-        c = hand.pop();
-        cardDeck.addCard(c);
+        
         cardDeck.spread();
         showHands();
     });
