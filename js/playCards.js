@@ -75,7 +75,6 @@ $(document).ready(function(){
         }
         var c = hand.pop();
         cardDeck.addCard(c);
-        
         cardDeck.spread();
         showHands();
     });
@@ -86,8 +85,7 @@ $(document).ready(function(){
         }
         var c = hand1.pop();
         cardDeck.addCard(c);
-        c = hand1.pop();
-        cardDeck.addCard(c);
+        
         cardDeck.spread();
         showHands();
     });
