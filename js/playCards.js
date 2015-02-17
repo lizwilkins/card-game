@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     var hand = [];
     var hand1 = [];
+    var discardPile = [];
+    
     var showError = function(msg){
         $('#error').html(msg).show();
         setTimeout(function(){
@@ -17,6 +19,12 @@ $(document).ready(function(){
             el.append(hand[i].getHTML());
         }
         el = $('#computerHand')
+        el.html('');
+        for (var i=0; i<hand1.length; i++){
+            el.append(hand1[i].getHTML());
+        }
+        
+        el = $('#discardPile')
         el.html('');
         for (var i=0; i<hand1.length; i++){
             el.append(hand1[i].getHTML());
@@ -74,8 +82,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
-        cardDeck.addCard(c);
-        cardDeck.spread();
+        discardPile[discardPile.length] = c;
         showHands();
     });
     $('#addCard1').click(function(){
@@ -84,9 +91,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
-        cardDeck.addCard(c);
-        
-        cardDeck.spread();
+        discardPile[discardPile.length] = c;
         showHands();
     });
     $('#orderByRank').click(doOrderByRank);
