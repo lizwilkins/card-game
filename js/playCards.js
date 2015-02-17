@@ -53,6 +53,14 @@ $(document).ready(function(){
         hand1[hand1.length] = c;
         cardDeck.spread();
         showHands();
+        
+    var doBackToDeck = function(){
+        var c = discardPile.pop();
+        cardDeck.addCard();
+        cardDeck.spread();
+        showHands();
+    }
+    
     }
     var doDeal = function(){
         for (var i=0; i<7; i++){
@@ -68,6 +76,7 @@ $(document).ready(function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
+    $('#backToDeck').click(doBackToDeck);
     $('#shuffler').click(doShuffle);
     $('#dealer').click(doDeal);
     $('#draw').click(doDrawCard);
