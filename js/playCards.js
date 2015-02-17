@@ -53,6 +53,7 @@ $(document).ready(function(){
         hand1[hand1.length] = c;
         cardDeck.spread();
         showHands();
+    }
         
     var doBackToDeck = function(){
         var c = discardPile.pop();
