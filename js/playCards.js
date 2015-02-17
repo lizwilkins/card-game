@@ -56,8 +56,12 @@ $(document).ready(function(){
     }
         
     var doBackToDeck = function(){
+        if(!discardPile.length){
+         showError('Discard Pile is empty');
+         return;
+        }
         var c = discardPile.pop();
-        cardDeck.addCard();
+        cardDeck.addCard(c);
         cardDeck.spread();
         showHands();
     }
