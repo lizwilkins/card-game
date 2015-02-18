@@ -87,9 +87,10 @@ $(document).ready(function(){
          return;
         }
         var n = discardPile.length;
+        var c;
         for(i = 0; i < n; i++)
         {
-        var c = discardPile.pop();
+        c = discardPile.pop();
         cardDeck.addCard(c);
         cardDeck.spread();
         showHands();
