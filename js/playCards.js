@@ -81,6 +81,20 @@ $(document).ready(function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
     }
+    var doEmptyDiscardPile = function(){
+        if(!discardPile.length){
+         showError('Discard Pile is empty');
+         return;
+        }
+        for(i = 0; i < 52; i--)
+        {
+        var c = discardPile.pop();
+        cardDeck.addCard(c);
+        cardDeck.spread();
+        showHands();
+        }
+    }
+    $('#emptyDiscardPile').click(doEmptyDiscardPile);
     $('#backToDeck').click(doBackToDeck);
     $('#shuffler').click(doShuffle);
     $('#dealer').click(doDeal);
