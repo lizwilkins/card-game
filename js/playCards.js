@@ -86,7 +86,8 @@ $(document).ready(function(){
          showError('Discard Pile is empty');
          return;
         }
-        for(i = 0; i < 52; i--)
+        var n = discardPile.length;
+        for(i = 0; i < n; i++)
         {
         var c = discardPile.pop();
         cardDeck.addCard(c);
