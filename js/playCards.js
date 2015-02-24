@@ -54,7 +54,6 @@ $(document).ready(function(){
         cardDeck.spread();
         showHands();
     }
-        
     var doBackToDeck = function(){
         if(!discardPile.length){
          showError('Discard Pile is empty');
@@ -65,8 +64,6 @@ $(document).ready(function(){
         cardDeck.spread();
         showHands();
     }
-    
-    
     var doDeal = function(){
         for (var i=0; i<7; i++){
             doDrawCard();
@@ -74,12 +71,20 @@ $(document).ready(function(){
         }
     }
     var doOrderByRank = function(){
-        cardDeck.orderByRank();
-        cardDeck.spread(); // update card table
+        hand.orderByRank();
+        showHands();
     }
     var doOrderBySuit = function(){
-        cardDeck.orderBySuit();
-        cardDeck.spread(); // update card table
+        hand.orderBySuit();
+        showHands();
+    }
+    var doOrderByRank1 = function(){
+        hand.orderByRank();
+        showHands();
+    }
+    var doOrderBySuit = function(){
+        hand.orderBySuit1();
+        showHands();
     }
     var doEmptyDiscardPile = function(){
         if(!discardPile.length){
@@ -128,7 +133,8 @@ $(document).ready(function(){
     });
     $('#orderByRank').click(doOrderByRank);
     $('#orderBySuit').click(doOrderBySuit);
-    
+    $('#orderByRank1').click(doOrderByRank1);
+    $('#orderBySuit1').click(doOrderBySuit1);    
 
 
 });
