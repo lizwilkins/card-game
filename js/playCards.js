@@ -87,7 +87,6 @@ $(document).ready(function(){
             doDrawCard1();
         }
     }
-    $('#emptyDiscardPile').click(doEmptyDiscardPile);
     $('#backToDeck').click(doBackToDeck);
     $('#shuffler').click(doShuffle);
     $('#dealer').click(doDeal);
