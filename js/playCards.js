@@ -2,10 +2,12 @@ $(document).ready(function(){
     var cardDeck = $("#cardDeck").playingCards();
     cardDeck.spread(); // show it
 
+    var discardPile = $("#discardPile").playingCards();
+    discardPile.spread();
+
     var hand = [];
     var hand1 = [];
-    var discardPile = [];
-    
+
     var showError = function(msg){
         $('#error').html(msg).show();
         setTimeout(function(){
@@ -23,12 +25,6 @@ $(document).ready(function(){
         for (var i=0; i<hand1.length; i++){
             el.append(hand1[i].getHTML());
         }
-        
-        el = $('#discardPile')
-        el.html('');
-        for (var i=0; i<discardPile.length; i++){
-            el.append(discardPile[i].getHTML());
-        }
     }
     var doShuffle = function(){
         cardDeck.shuffle();
@@ -40,9 +36,9 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
+        discardPile.addCard(c);
         showHands();
-        discardPile[discardPile.length] = c;
-        showHands();
+        discardPile.spread();
     }
     var doDiscard1 = function(){
         if(!hand1.length){
@@ -50,9 +46,9 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
+        discardPile.addCard(c);
         showHands();
-        discardPile[discardPile.length] = c;
-        showHands();
+        discardPile.spread();
     }    
     var doDrawCard = function(){
         var c = cardDeck.draw();
