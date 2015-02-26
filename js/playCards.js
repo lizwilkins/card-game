@@ -2,7 +2,7 @@ $(document).ready(function(){
     var cardDeck = $("#cardDeck").playingCards();
     cardDeck.spread(); // show it
 
-    var discardPile = $("#discardPile");
+    var discardPile = [];
 
     var hand = [];
     var hand1 = [];
@@ -35,7 +35,8 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
-        discardPile.addCard(c);
+        if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
+        else {discardPile.addCard(c);}
         showHands();
         discardPile.spread();
     }
@@ -45,7 +46,8 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
-        discardPile.addCard(c);
+        if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
+        else {discardPile.addCard(c);}
         showHands();
         discardPile.spread();
     }    
