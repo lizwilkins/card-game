@@ -2,8 +2,7 @@ $(document).ready(function(){
     var cardDeck = $("#cardDeck").playingCards();
     cardDeck.spread(); // show it
 
-    var discardPile = $("#discardPile").playingCards();
-    discardPile.spread();
+    var discardPile = $("#discardPile");
 
     var hand = [];
     var hand1 = [];
