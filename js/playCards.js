@@ -34,6 +34,26 @@ $(document).ready(function(){
         cardDeck.shuffle();
         cardDeck.spread(); // update card table
     }
+    var doAddCard = function(){
+        if(!hand.length){
+            showError('your hand is empty');
+            return;
+        }
+        var c = hand.pop();
+        showHands();
+        discardPile[discardPile.length] = c;
+        showHands();
+    }
+    var doAddCard = function(){
+        if(!hand1.length){
+            showError('your hand is empty');
+            return;
+        }
+        var c = hand1.pop();
+        showHands();
+        discardPile[discardPile.length] = c;
+        showHands();
+    }    
     var doDrawCard = function(){
         var c = cardDeck.draw();
         if(!c){
@@ -88,17 +108,17 @@ $(document).ready(function(){
     }
     var doEmptyDiscardPile = function(){
         if(!discardPile.length){
-         showError('Discard Pile is empty');
-         return;
+            showError('Discard Pile is empty');
+            return;
         }
         var n = discardPile.length;
         var c;
         for(i = 0; i < n; i++)
         {
-        c = discardPile.pop();
-        cardDeck.addCard(c);
-        cardDeck.spread();
-        showHands();
+            c = discardPile.pop();
+            cardDeck.addCard(c);
+            cardDeck.spread();
+            showHands();
         }
     }
     $('#emptyDiscardPile').click(doEmptyDiscardPile);
@@ -107,36 +127,12 @@ $(document).ready(function(){
     $('#dealer').click(doDeal);
     $('#draw').click(doDrawCard);
     $('#draw1').click(doDrawCard1);
-    $('#shuffleDraw').click(function(){
-        doShuffle();
-        doDrawCard();
-    });
-    $('#addCard').click(function(){
-        if(!hand.length){
-            showError('your hand is empty');
-            return;
-        }
-        var c = hand.pop();
-        showHands();
-        discardPile[discardPile.length] = c;
-        showHands();
-    });
-    $('#addCard1').click(function(){
-        if(!hand1.length){
-            showError('your hand is empty');
-            return;
-        }
-        var c = hand1.pop();
-        showHands();
-        discardPile[discardPile.length] = c;
-        showHands();
-    });
+    $('#addCard').click(doAddCard1);
+    $('#addCard1').click(doAddCard1);
     $('#orderByRank').click(doOrderByRank);
     $('#orderBySuit').click(doOrderBySuit);
     $('#orderByRank1').click(doOrderByRank1);
     $('#orderBySuit1').click(doOrderBySuit1);    
-
-
 });
 /*
 // if we weren't using jquery to handle the document ready state, we would do this:
