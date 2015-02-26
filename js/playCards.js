@@ -34,7 +34,7 @@ $(document).ready(function(){
         cardDeck.shuffle();
         cardDeck.spread(); // update card table
     }
-    var doAddCard = function(){
+    var doDiscard = function(){
         if(!hand.length){
             showError('your hand is empty');
             return;
@@ -44,7 +44,7 @@ $(document).ready(function(){
         discardPile[discardPile.length] = c;
         showHands();
     }
-    var doAddCard = function(){
+    var doDiscard1 = function(){
         if(!hand1.length){
             showError('your hand is empty');
             return;
@@ -90,22 +90,6 @@ $(document).ready(function(){
             doDrawCard1();
         }
     }
-    var doOrderByRank = function(){
-        hand.orderByRank();
-        showHands();
-    }
-    var doOrderBySuit = function(){
-        hand.orderBySuit();
-        showHands();
-    }
-    var doOrderByRank1 = function(){
-        hand.orderByRank();
-        showHands();
-    }
-    var doOrderBySuit = function(){
-        hand.orderBySuit1();
-        showHands();
-    }
     var doEmptyDiscardPile = function(){
         if(!discardPile.length){
             showError('Discard Pile is empty');
@@ -127,12 +111,8 @@ $(document).ready(function(){
     $('#dealer').click(doDeal);
     $('#draw').click(doDrawCard);
     $('#draw1').click(doDrawCard1);
-    $('#addCard').click(doAddCard1);
-    $('#addCard1').click(doAddCard1);
-    $('#orderByRank').click(doOrderByRank);
-    $('#orderBySuit').click(doOrderBySuit);
-    $('#orderByRank1').click(doOrderByRank1);
-    $('#orderBySuit1').click(doOrderBySuit1);    
+    $('#discard').click(doDiscard);
+    $('#discard1').click(doDiscard1);
 });
 /*
 // if we weren't using jquery to handle the document ready state, we would do this:
