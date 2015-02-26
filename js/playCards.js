@@ -71,34 +71,20 @@ $(document).ready(function(){
         showHands();
     }
     var doBackToDeck = function(){
-        if(!discardPile.length){
-         showError('Discard Pile is empty');
-         return;
+        var c = discardPile.draw();
+        if(!c){
+            showError('no more cards');
+            return;
         }
-        var c = discardPile.pop();
         cardDeck.addCard(c);
         cardDeck.spread();
+        discardPile.spread();
         showHands();
     }
     var doDeal = function(){
         for (var i=0; i<7; i++){
             doDrawCard();
             doDrawCard1();
-        }
-    }
-    var doEmptyDiscardPile = function(){
-        if(!discardPile.length){
-            showError('Discard Pile is empty');
-            return;
-        }
-        var n = discardPile.length;
-        var c;
-        for(i = 0; i < n; i++)
-        {
-            c = discardPile.pop();
-            cardDeck.addCard(c);
-            cardDeck.spread();
-            showHands();
         }
     }
     $('#emptyDiscardPile').click(doEmptyDiscardPile);
