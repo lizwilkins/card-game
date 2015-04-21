@@ -34,6 +34,21 @@ $(document).ready(function(){
         cardDeck.shuffle();
         cardDeck.spread(); // update card table
     }
+    var doDeal = function(){
+        for (var i=0; i<7; i++){
+            doDrawCard1();
+            doDrawCard2();
+        }
+    }
+    var doBackToDeck = function(){
+        if(!discardPile.length){
+            showError('discard pile is empty');
+            return;
+        }
+        var c = discardPile.pop();
+        cardDeck.addCard(c);
+        showCards();
+    }
     var doDiscard1 = function(){
         if(!hand1.length){
             showError('your hand is empty');
@@ -52,6 +67,24 @@ $(document).ready(function(){
         discardPile[discardPile.length] = c;
         showCards();
     }    
+    var doPassCard1 = function(){
+        if(!hand1.length){
+            showError('your hand is empty');
+            return;
+        }
+        var c = hand1.pop();
+        hand2[hand2.length] = c;
+        showCards();
+    }
+    var doPassCard2 = function(){
+        if(!hand2.length){
+            showError('your hand is empty');
+            return;
+        }
+        var c = hand2.pop();
+        hand1[hand1.length] = c;
+        showCards();
+    }  
     var doDrawCard1 = function(){
         var c = cardDeck.draw();
         if(!c){
@@ -68,6 +101,24 @@ $(document).ready(function(){
             return;
         }
         hand2[hand2.length] = c;
+        showCards();
+    }
+    var doTakeCard1 = function(){
+        if(!hand2.length){
+            showError('the hand is empty');
+            return;
+        }
+        var c = hand2.pop();
+        hand1[hand1.length] = c;
+        showCards();
+    }
+    var doTakeCard2 = function(){
+        if(!hand1.length){
+            showError('the hand is empty');
+            return;
+        }
+        var c = hand1.pop();
+        hand2[hand21.length] = c;
         showCards();
     }
     var doBackToDeck = function(){
@@ -92,6 +143,10 @@ $(document).ready(function(){
     $('#draw1').click(doDrawCard1);
     $('#discard2').click(doDiscard2);
     $('#discard1').click(doDiscard1);
+    $('#pass2').click(doPassCard2);
+    $('#pass1').click(doPassCard1);
+    $('#take2').click(doTakeCard2);
+    $('#take1').click(doTakeCard1);
 });
 /*
 // if we weren't using jquery to handle the document ready state, we would do this:
