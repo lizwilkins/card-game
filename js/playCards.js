@@ -84,8 +84,8 @@ $(document).ready(function(){
     }
     var doDeal = function(){
         for (var i=0; i<7; i++){
-            doDrawCard();
             doDrawCard1();
+            doDrawCard2();
         }
     }
     $('#backToDeck').click(doBackToDeck);
