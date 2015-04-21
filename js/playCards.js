@@ -13,7 +13,7 @@ $(document).ready(function(){
             $('#error').fadeOut('slow');
         },3000);
     }
-    var showHands = function(){
+    var showCards = function(){
         var el = $('#hand1')
         el.html('');
         for (var i=0; i<hand1.length; i++){
@@ -24,6 +24,12 @@ $(document).ready(function(){
         for (var i=0; i<hand2.length; i++){
             el.append(hand2[i].getHTML());
         }
+        el = $('#discardPile')
+        el.html('');
+        for (var i=0; i<discardPile.length; i++){
+            el.append(discardPile[i].getHTML());
+        }
+        cardDeck.spread();
     }
     var doShuffle = function(){
         cardDeck.shuffle();
@@ -37,8 +43,7 @@ $(document).ready(function(){
         var c = hand1.pop();
         if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
         else {discardPile.addCard(c);}
-        showHands();
-        discardPile.spread();
+        showCards();
     }
     var doDiscard2 = function(){
         if(!hand2.length){
@@ -48,8 +53,7 @@ $(document).ready(function(){
         var c = hand2.pop();
         if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
         else {discardPile.addCard(c);}
-        showHands();
-        discardPile.spread();
+        showCards();
     }    
     var doDrawCard1 = function(){
         var c = cardDeck.draw();
@@ -58,8 +62,7 @@ $(document).ready(function(){
             return;
         }
         hand1[hand1.length] = c;
-        cardDeck.spread();
-        showHands();
+        showCards();
     }
     var doDrawCard2 = function(){
         var c = cardDeck.draw();
@@ -68,8 +71,7 @@ $(document).ready(function(){
             return;
         }
         hand2[hand2.length] = c;
-        cardDeck.spread();
-        showHands();
+        showCards();
     }
     var doBackToDeck = function(){
         var c = discardPile.draw();
@@ -78,9 +80,7 @@ $(document).ready(function(){
             return;
         }
         cardDeck.addCard(c);
-        cardDeck.spread();
-        discardPile.spread();
-        showHands();
+        showCards();
     }
     var doDeal = function(){
         for (var i=0; i<7; i++){
