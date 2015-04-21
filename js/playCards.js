@@ -3,7 +3,6 @@ $(document).ready(function(){
     cardDeck.spread(); // show it
 
     var discardPile = [];
-
     var hand1 = [];
     var hand2 = [];
 
@@ -41,8 +40,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
-        if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
-        else {discardPile.addCard(c);}
+        discardPile[length] = c;
         showCards();
     }
     var doDiscard2 = function(){
@@ -51,8 +49,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand2.pop();
-        if (!discardPile.length) {discardPile = $("#discardPile").addCard(c);}
-        else {discardPile.addCard(c);}
+        discardPile[length] = c;
         showCards();
     }    
     var doDrawCard1 = function(){
@@ -74,11 +71,11 @@ $(document).ready(function(){
         showCards();
     }
     var doBackToDeck = function(){
-        var c = discardPile.draw();
-        if(!c){
-            showError('no more cards');
+        if(!discardPile.length){
+            showError('discard pile is empty');
             return;
         }
+        var c = discardPile.pop();
         cardDeck.addCard(c);
         showCards();
     }
