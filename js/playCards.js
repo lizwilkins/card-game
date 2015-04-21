@@ -14,12 +14,12 @@ $(document).ready(function(){
         },3000);
     }
     var showHands = function(){
-        var el = $('#player1')
+        var el = $('#hand1')
         el.html('');
         for (var i=0; i<hand1.length; i++){
             el.append(hand1[i].getHTML());
         }
-        el = $('#player2')
+        el = $('#hand2')
         el.html('');
         for (var i=0; i<hand2.length; i++){
             el.append(hand2[i].getHTML());
