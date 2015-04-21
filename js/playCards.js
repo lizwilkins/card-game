@@ -89,8 +89,8 @@ $(document).ready(function(){
         }
     }
     $('#backToDeck').click(doBackToDeck);
-    $('#shuffler').click(doShuffle);
-    $('#dealer').click(doDeal);
+    $('#shuffle').click(doShuffle);
+    $('#deal').click(doDeal);
     $('#draw2').click(doDrawCard2);
     $('#draw1').click(doDrawCard1);
     $('#discard2').click(doDiscard2);
