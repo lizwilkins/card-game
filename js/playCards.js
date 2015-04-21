@@ -40,7 +40,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand1.pop();
-        discardPile[length] = c;
+        discardPile[discardPile.length] = c;
         showCards();
     }
     var doDiscard2 = function(){
@@ -49,7 +49,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand2.pop();
-        discardPile[length] = c;
+        discardPile[discardPile.length] = c;
         showCards();
     }    
     var doDrawCard1 = function(){
