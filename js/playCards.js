@@ -49,6 +49,8 @@ $(document).ready(function(){
         cardDeck.addCard(c);
         showCards();
     }
+    var DoOrderByRankAndSuit = function(){
+    }
     var doDiscard1 = function(){
         if(!hand1.length){
             showError('Player1 hand is empty');
@@ -125,6 +127,7 @@ $(document).ready(function(){
     $('#shuffle').click(doShuffle);
     $('#deal').click(doDeal);
     $('#backToDeck').click(doBackToDeck);
+    $('#orderByRankAndSuit').click(DoOrderByRankAndSuit);
     
     $('#discard1').click(doDiscard1);
     $('#discard2').click(doDiscard2);
