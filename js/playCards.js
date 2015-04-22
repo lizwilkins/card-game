@@ -50,7 +50,7 @@ $(document).ready(function(){
         showCards();
     }
     var DoSort = function(){
-        cardDeck.orderByRank;
+        cardDeck.orderByRank();
         showCards();
     }
     var doDiscard1 = function(){
