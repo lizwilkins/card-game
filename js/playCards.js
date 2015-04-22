@@ -49,7 +49,9 @@ $(document).ready(function(){
         cardDeck.addCard(c);
         showCards();
     }
-    var DoOrderByRankAndSuit = function(){
+    var DoSort = function(){
+        cardDeck.orderByRank;
+        showCards();
     }
     var doDiscard1 = function(){
         if(!hand1.length){
@@ -127,7 +129,7 @@ $(document).ready(function(){
     $('#shuffle').click(doShuffle);
     $('#deal').click(doDeal);
     $('#backToDeck').click(doBackToDeck);
-    $('#orderByRankAndSuit').click(DoOrderByRankAndSuit);
+    $('#sort').click(doSort);
     
     $('#discard1').click(doDiscard1);
     $('#discard2').click(doDiscard2);
