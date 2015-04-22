@@ -40,6 +40,14 @@ $(document).ready(function(){
             doDrawCard2();
         }
     }
+    var doSortByRank = function(){
+        cardDeck.orderByRank();
+        showCards();
+    }
+    var doSortBySuit = function(){
+        cardDeck.orderBySuit();
+        showCards();
+    }
     var doBackToDeck = function(){
         if(!discardPile.length){
             showError('discard pile is empty');
@@ -47,10 +55,6 @@ $(document).ready(function(){
         }
         var c = discardPile.pop();
         cardDeck.addCard(c);
-        showCards();
-    }
-    var doSort = function(){
-        cardDeck.orderByRank();
         showCards();
     }
     var doDiscard1 = function(){
@@ -129,7 +133,8 @@ $(document).ready(function(){
     $('#shuffle').click(doShuffle);
     $('#deal').click(doDeal);
     $('#backToDeck').click(doBackToDeck);
-    $('#sort').click(doSort);
+    $('#sortByRank').click(doSortByRank);
+    $('#sortBySuit').click(doSortBySuit);
     
     $('#discard1').click(doDiscard1);
     $('#discard2').click(doDiscard2);
