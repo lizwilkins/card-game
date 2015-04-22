@@ -49,7 +49,7 @@ $(document).ready(function(){
         cardDeck.addCard(c);
         showCards();
     }
-    var DoSort = function(){
+    var doSort = function(){
         cardDeck.orderByRank();
         showCards();
     }
