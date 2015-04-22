@@ -51,7 +51,7 @@ $(document).ready(function(){
     }
     var doDiscard1 = function(){
         if(!hand1.length){
-            showError('your hand is empty');
+            showError('Player1 hand is empty');
             return;
         }
         var c = hand1.pop();
@@ -60,7 +60,7 @@ $(document).ready(function(){
     }
     var doDiscard2 = function(){
         if(!hand2.length){
-            showError('your hand is empty');
+            showError('Player2 hand is empty');
             return;
         }
         var c = hand2.pop();
@@ -69,7 +69,7 @@ $(document).ready(function(){
     }    
     var doPassCard1 = function(){
         if(!hand1.length){
-            showError('your hand is empty');
+            showError('Player1 hand is empty');
             return;
         }
         var c = hand1.pop();
@@ -78,7 +78,7 @@ $(document).ready(function(){
     }
     var doPassCard2 = function(){
         if(!hand2.length){
-            showError('your hand is empty');
+            showError('Player2 hand is empty');
             return;
         }
         var c = hand2.pop();
@@ -105,7 +105,7 @@ $(document).ready(function(){
     }
     var doTakeCard1 = function(){
         if(!hand2.length){
-            showError('the hand is empty');
+            showError('Player2 hand is empty');
             return;
         }
         var c = hand2.pop();
@@ -114,39 +114,26 @@ $(document).ready(function(){
     }
     var doTakeCard2 = function(){
         if(!hand1.length){
-            showError('the hand is empty');
+            showError('Player1 hand is empty');
             return;
         }
         var c = hand1.pop();
-        hand2[hand21.length] = c;
+        hand2[hand2.length] = c;
         showCards();
     }
-    var doBackToDeck = function(){
-        if(!discardPile.length){
-            showError('discard pile is empty');
-            return;
-        }
-        var c = discardPile.pop();
-        cardDeck.addCard(c);
-        showCards();
-    }
-    var doDeal = function(){
-        for (var i=0; i<7; i++){
-            doDrawCard1();
-            doDrawCard2();
-        }
-    }
-    $('#backToDeck').click(doBackToDeck);
+
     $('#shuffle').click(doShuffle);
     $('#deal').click(doDeal);
-    $('#draw2').click(doDrawCard2);
-    $('#draw1').click(doDrawCard1);
-    $('#discard2').click(doDiscard2);
+    $('#backToDeck').click(doBackToDeck);
+    
     $('#discard1').click(doDiscard1);
-    $('#pass2').click(doPassCard2);
+    $('#discard2').click(doDiscard2);
     $('#pass1').click(doPassCard1);
-    $('#take2').click(doTakeCard2);
+    $('#pass2').click(doPassCard2);
+    $('#draw1').click(doDrawCard1);
+    $('#draw2').click(doDrawCard2);
     $('#take1').click(doTakeCard1);
+    $('#take2').click(doTakeCard2);
 });
 /*
 // if we weren't using jquery to handle the document ready state, we would do this:
